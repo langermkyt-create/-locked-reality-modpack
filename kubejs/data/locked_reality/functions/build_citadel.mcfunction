@@ -38,3 +38,29 @@ setblock 8 62 -12 minecraft:lantern
 setblock -8 62 12 minecraft:lantern
 setblock 8 62 12 minecraft:lantern
 forceload remove -32 -32 31 31
+fill -4 61 -20 -4 70 -20 minecraft:obsidian
+fill 4 61 -20 4 70 -20 minecraft:obsidian
+fill -4 70 -20 4 70 -20 minecraft:crying_obsidian
+fill -3 61 -20 3 61 -20 minecraft:polished_blackstone_bricks
+fill -3 62 -20 3 66 -20 minecraft:air
+fill -5 61 10 5 72 19 minecraft:polished_blackstone_bricks
+fill -4 62 11 4 71 18 minecraft:air
+fill -4 61 11 4 61 18 minecraft:polished_blackstone_bricks
+fill -4 72 11 4 72 18 minecraft:obsidian
+fill -6 73 9 6 73 20 minecraft:crying_obsidian
+fill -5 74 10 5 74 19 minecraft:obsidian
+fill -2 62 17 2 62 17 minecraft:polished_blackstone_bricks
+setblock 0 63 17 minecraft:lectern
+setblock 0 64 17 minecraft:soul_lantern
+fill -8 61 -2 -5 61 2 minecraft:crying_obsidian
+fill 5 61 -2 8 61 2 minecraft:crying_obsidian
+fill -2 61 -8 2 61 -5 minecraft:crying_obsidian
+fill -2 61 5 2 61 8 minecraft:crying_obsidian
+setblock -10 66 0 minecraft:sea_lantern
+setblock 10 66 0 minecraft:sea_lantern
+setblock 0 66 -10 minecraft:sea_lantern
+setblock 0 66 10 minecraft:sea_lantern
+setblock -4 71 15 minecraft:lantern
+setblock 4 71 15 minecraft:lantern
+setblock -4 63 15 minecraft:lantern
+setblock 4 63 15 minecraft:lantern
