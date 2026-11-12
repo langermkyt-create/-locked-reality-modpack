@@ -8,7 +8,7 @@
       "text": "Цитадель мага — Разрушитель печатей"
     },
     "description": {
-      "text": "После победы над Стражем Края победи Иссушителя. Его звезда разрушит последнюю печать."
+      "text": "Победи Архитектора — усиленного Иссушителя, призванного в Цитадели."
     },
     "frame": "challenge",
     "show_toast": true,
@@ -16,11 +16,12 @@
     "hidden": false
   },
   "criteria": {
-    "defeat_wither": {
+    "defeat_architect": {
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "type": "minecraft:wither"
+          "type": "minecraft:wither",
+          "nbt": "{Tags:[\"locked_reality_final_boss\"]}"
         }
       }
     }
