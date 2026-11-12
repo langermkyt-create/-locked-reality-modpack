@@ -20,6 +20,11 @@
       "id": "kubejs",
       "source": "modrinth",
       "role": "story triggers and data pack scripting"
+    },
+    {
+      "id": "yungs-better-dungeons",
+      "source": "modrinth",
+      "role": "additional overworld dungeons and early-game exploration"
     }
   ]
 }
