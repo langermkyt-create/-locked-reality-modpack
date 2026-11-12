@@ -23,7 +23,7 @@
         "minecraft:compass": 1,
         "minecraft:amethyst_shard": 2
       },
-      "reward": "3 amethyst shards; 120 XP"
+      "reward": "2 amethyst shards; 120 XP"
     },
     {
       "id": "harbinger",
@@ -96,7 +96,7 @@
     "Objectives are real Minecraft advancements with inventory/entity triggers and reward functions.",
     "Planet arrival triggers remain in place; the item objectives are not dimension-locked because inventory triggers are vanilla-global.",
     "The campaign is an initial playable quest chain, not yet a validated 20–30 hour experience.",
-    "Every chapter after the Moon requires the amethyst story fragments rewarded by the previous chapter; this creates a resource-gated progression chain.",
+    "Later planetary resource quests require the accumulated amethyst fragments from earlier chapter rewards; the Harbinger and Ignis boss fights provide the missing fragments.",
     "Cataclysm boss objectives are linked to Harbinger, Ignis and Ender Guardian entity defeat triggers. Their boss structures are supplied by the Cataclysm mod."
   ]
 }
