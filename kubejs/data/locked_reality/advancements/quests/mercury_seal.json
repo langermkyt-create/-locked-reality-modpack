@@ -1,1 +1,77 @@
-undefined
+{
+  "parent": "locked_reality:quests/venus_filter",
+  "display": {
+    "icon": {
+      "item": "minecraft:gold_ingot"
+    },
+    "title": {
+      "text": "Мёртвое солнце — Золотая печать"
+    },
+    "description": {
+      "text": "Собери 8 золотых слитков, часы и 7 осколков, чтобы настроить солнечную печать."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "gold": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:gold_ingot"
+            ],
+            "count": {
+              "min": 8
+            }
+          }
+        ]
+      }
+    },
+    "clock": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:clock"
+            ]
+          }
+        ]
+      }
+    },
+    "relic": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:amethyst_shard"
+            ],
+            "count": {
+              "min": 7
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "gold"
+    ],
+    [
+      "clock"
+    ],
+    [
+      "relic"
+    ]
+  ],
+  "rewards": {
+    "function": "locked_reality:quest_mercury_seal",
+    "experience": 200
+  }
+}
