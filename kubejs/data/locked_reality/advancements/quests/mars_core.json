@@ -1,0 +1,18 @@
+{
+  "parent": "locked_reality:mars",
+  "display": {
+    "icon": {"item": "minecraft:copper_ingot"},
+    "title": {"text": "Красная пустошь — Ядро машин"},
+    "description": {"text": "Найди 8 медных слитков и компас: старые механизмы ждут запуска."},
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "copper": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:copper_ingot"], "count": {"min": 8}}]}},
+    "compass": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:compass"]}]}}
+  },
+  "requirements": [["copper"], ["compass"]],
+  "rewards": {"function": "locked_reality:quest_mars_core", "experience": 120}
+}
