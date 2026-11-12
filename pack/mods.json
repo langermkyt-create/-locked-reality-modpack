@@ -4,12 +4,14 @@
   "projects": [
     "ad-astra",
     "kubejs",
-    "yungs-better-dungeons"
+    "yungs-better-dungeons",
+    "l_enders-cataclysm"
   ],
   "selection_policy": "latest stable Modrinth release compatible with Minecraft 1.20.1 and Forge; required dependencies are resolved recursively",
   "notes": [
     "The first playable technical base contains space exploration and scripting.",
     "The quest system and custom planet content are staged separately; no unverified FTB Quests files are bundled.",
-    "YUNG's Better Dungeons adds additional overworld dungeons for early exploration; its required YUNG's API dependency is resolved automatically."
+    "YUNG's Better Dungeons adds additional overworld dungeons for early exploration; its required YUNG's API dependency is resolved automatically.",
+    "L_Ender's Cataclysm adds challenging boss dungeons; required Curios API and Lionfish-API dependencies are resolved from Modrinth metadata."
   ]
 }
