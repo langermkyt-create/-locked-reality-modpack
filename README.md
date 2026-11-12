@@ -29,7 +29,8 @@
 
 ## Сборка и проверки
 ```bash
-python build.py\npython build_curseforge.py
+python build.py
+python build_curseforge.py
 python -m compileall -q .
 python -m unittest discover -s tests -v
 python tests/smoke_server.py
