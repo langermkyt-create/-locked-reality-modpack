@@ -1,0 +1,41 @@
+{
+  "parent": "locked_reality:mercury",
+  "display": {
+    "icon": {
+      "item": "ad_astra:mercury_globe"
+    },
+    "title": {
+      "text": "Крепость Меркурия — глобус Меркурия"
+    },
+    "description": {
+      "text": "Найди планетарную крепость и забери её глобус."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "globe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ad_astra:mercury_globe"
+            ]
+          }
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:mercury"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "locked_reality:quest_globe_mercury",
+    "experience": 200
+  }
+}
