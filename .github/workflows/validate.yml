@@ -25,6 +25,24 @@ jobs:
         run: python build.py
       - name: Forge dedicated-server smoke test
         run: python tests/smoke_server.py
+      - name: Create source project ZIP
+        if: always()
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          root = Path(".")
+          include = ["README.md", ".gitignore", "pack", "config", "kubejs", "quests", "tests", "docs", ".github", "build.py"]
+          with ZipFile("build/locked-reality-project.zip", "w", ZIP_DEFLATED) as z:
+              for entry in include:
+                  p = root / entry
+                  if p.is_file():
+                      z.write(p, p.as_posix())
+                  elif p.is_dir():
+                      for f in p.rglob("*"):
+                          if f.is_file() and ".git" not in f.parts:
+                              z.write(f, f.as_posix())
+          PY
       - name: Upload build and logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -32,6 +50,7 @@ jobs:
           name: locked-reality-build
           path: |
             build/locked-reality-0.1.0.mrpack
+            build/locked-reality-project.zip
             build/resolved-mods.json
             build/server-smoke.log
           if-no-files-found: warn
