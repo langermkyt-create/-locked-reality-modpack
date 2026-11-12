@@ -33,5 +33,10 @@
   "rewards": {
     "function": "locked_reality:quest_ignis",
     "experience": 400
-  }
+  },
+  "requirements": [
+    [
+      "defeat_ignis"
+    ]
+  ]
 }
