@@ -1,5 +1,5 @@
-fill -32 60 -32 32 60 32 minecraft:polished_blackstone_bricks
-fill -31 61 -31 31 80 31 minecraft:air
+forceload add -32 -32 31 31
+fill -31 60 -31 31 60 31 minecraft:polished_blackstone_bricks
 fill -20 61 -20 -20 72 20 minecraft:polished_blackstone_bricks
 fill 20 61 -20 20 72 20 minecraft:polished_blackstone_bricks
 fill -20 61 20 20 72 20 minecraft:polished_blackstone_bricks
@@ -37,3 +37,4 @@ setblock -8 62 -12 minecraft:lantern
 setblock 8 62 -12 minecraft:lantern
 setblock -8 62 12 minecraft:lantern
 setblock 8 62 12 minecraft:lantern
+forceload remove -32 -32 31 31
