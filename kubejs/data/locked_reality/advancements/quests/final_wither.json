@@ -29,5 +29,10 @@
   "rewards": {
     "function": "locked_reality:quest_finale",
     "experience": 1000
-  }
+  },
+  "requirements": [
+    [
+      "defeat_architect"
+    ]
+  ]
 }
