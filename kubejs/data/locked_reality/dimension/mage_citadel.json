@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:the_end",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "minecraft:the_end",
+      "lakes": false,
+      "features": false,
+      "layers": [
+        {
+          "block": "minecraft:bedrock",
+          "height": 1
+        },
+        {
+          "block": "minecraft:end_stone",
+          "height": 59
+        },
+        {
+          "block": "minecraft:polished_blackstone_bricks",
+          "height": 1
+        }
+      ],
+      "structure_overrides": []
+    }
+  }
+}
