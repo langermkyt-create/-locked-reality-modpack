@@ -5,7 +5,7 @@
     30
   ],
   "duration_status": "planned_target_not_measured",
-  "current_playable_scope": "Five planetary arrival scenes, five dimension-specific resource quests, five optional fortress-globe quests, three Cataclysm boss milestones, a custom Mage Citadel dimension, a named enhanced Wither finale with a live boss bar. The full 20–30 hour story is not yet measured.",
+  "current_playable_scope": "Five planetary arrival scenes, five dimension-specific resource quests, five optional fortress-globe quests, three main Cataclysm boss milestones, two optional Cataclysm boss hunts, a custom Mage Citadel dimension, and a named enhanced Wither finale with a live boss bar. The full 20–30 hour story is not yet measured.",
   "premise": "Неизвестный маг запер героя в искусственной реальности, собранной из нескольких миров. Сломанный маяк ведёт к планетам, а каждый найденный осколок восстанавливает часть навигации и раскрывает правду о тюрьме.",
   "chapters": [
     {
@@ -117,6 +117,18 @@
       "planet": "ad_astra:glacio",
       "objective": "Найти крепость Гласио и забрать глобус ad_astra:glacio_globe.",
       "reward": "250 опыта и два золотых яблока."
+    }
+  ],
+  "optional_boss_hunts": [
+    {
+      "boss": "cataclysm:ancient_remnant",
+      "dimension": "minecraft:overworld",
+      "story": "В пустынной гробнице Древний остаток охраняет карту раннего эксперимента мага."
+    },
+    {
+      "boss": "cataclysm:netherite_monstrosity",
+      "dimension": "minecraft:the_nether",
+      "story": "В Кузне душ Незеритовый монстр хранит следы неудачной попытки мага создать бессмертное тело."
     }
   ]
 }
