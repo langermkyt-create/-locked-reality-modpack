@@ -5,10 +5,10 @@
       "item": "minecraft:packed_ice"
     },
     "title": {
-      "text": "Ледяная граница — Ключ цитадели"
+      "text": "Ледяная граница — ключ цитадели"
     },
     "description": {
-      "text": "Принеси 16 плотного льда, алмаз и 11 осколков памяти после победы над Игнисом."
+      "text": "Принеси 16 плотного льда, 8 ледяных осколков Гласио и 11 осколков памяти."
     },
     "frame": "challenge",
     "show_toast": true,
@@ -36,14 +36,17 @@
         }
       }
     },
-    "diamond": {
+    "ice_shard": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:diamond"
-            ]
+              "ad_astra:ice_shard"
+            ],
+            "count": {
+              "min": 8
+            }
           }
         ],
         "player": {
@@ -79,7 +82,7 @@
       "ice"
     ],
     [
-      "diamond"
+      "ice_shard"
     ],
     [
       "relic"
