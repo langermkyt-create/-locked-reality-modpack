@@ -1,18 +1,72 @@
 {
   "parent": "locked_reality:moon",
   "display": {
-    "icon": {"item": "minecraft:iron_ingot"},
-    "title": {"text": "Лунные руины — Следы экспедиции"},
-    "description": {"text": "Собери 8 железных слитков и 4 красных камня для восстановления маяка."},
+    "icon": {
+      "item": "minecraft:iron_ingot"
+    },
+    "title": {
+      "text": "Лунные руины — Следы экспедиции"
+    },
+    "description": {
+      "text": "Собери 8 железных слитков и 4 красных камня для восстановления маяка."
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "iron": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:iron_ingot"], "count": {"min": 8}}]}},
-    "redstone": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:redstone"], "count": {"min": 4}}]}}
+    "iron": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "count": {
+              "min": 8
+            }
+          }
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:moon"
+          }
+        }
+      }
+    },
+    "redstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:redstone"
+            ],
+            "count": {
+              "min": 4
+            }
+          }
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:moon"
+          }
+        }
+      }
+    }
   },
-  "requirements": [["iron"], ["redstone"]],
-  "rewards": {"function": "locked_reality:quest_moon_relics", "experience": 80}
+  "requirements": [
+    [
+      "iron"
+    ],
+    [
+      "redstone"
+    ]
+  ],
+  "rewards": {
+    "function": "locked_reality:quest_moon_relics",
+    "experience": 80
+  }
 }
