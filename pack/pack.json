@@ -25,6 +25,11 @@
       "id": "yungs-better-dungeons",
       "source": "modrinth",
       "role": "additional overworld dungeons and early-game exploration"
+    },
+    {
+      "id": "l_enders-cataclysm",
+      "source": "modrinth",
+      "role": "boss dungeons and late-game encounters"
     }
   ]
 }
