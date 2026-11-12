@@ -1,0 +1,44 @@
+name: Project validation
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate project files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate JSON files
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          files = sorted(Path(".").rglob("*.json"))
+          for path in files:
+              if ".git" in path.parts:
+                  continue
+              json.loads(path.read_text(encoding="utf-8"))
+              print(f"OK: {path}")
+          print(f"Validated {len(files)} JSON file(s)")
+          PY
+
+      - name: Compile Python test scripts
+        run: python -m compileall -q tests
+
+      - name: Validate pack metadata
+        run: python tests/check_project.py
