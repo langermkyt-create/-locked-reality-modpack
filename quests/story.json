@@ -91,5 +91,32 @@
       "Получить яйцо дракона и завершить текущую сюжетную ветку"
     ],
     "limitation": "Цитадель строится функцией из блоков в плоском измерении; Архитектор использует модель и AI Иссушителя, но имеет собственное имя, повышенное здоровье и урон."
-  }
+  },
+  "optional_exploration": [
+    {
+      "planet": "ad_astra:moon",
+      "objective": "Найти крепость Луны и забрать глобус ad_astra:moon_globe.",
+      "reward": "120 опыта и золотое яблоко."
+    },
+    {
+      "planet": "ad_astra:mars",
+      "objective": "Найти крепость Марса и забрать глобус ad_astra:mars_globe.",
+      "reward": "160 опыта и 3 изумруда."
+    },
+    {
+      "planet": "ad_astra:venus",
+      "objective": "Найти крепость Венеры и забрать глобус ad_astra:venus_globe.",
+      "reward": "180 опыта и золотое яблоко."
+    },
+    {
+      "planet": "ad_astra:mercury",
+      "objective": "Найти крепость Меркурия и забрать глобус ad_astra:mercury_globe.",
+      "reward": "200 опыта и алмаз."
+    },
+    {
+      "planet": "ad_astra:glacio",
+      "objective": "Найти крепость Гласио и забрать глобус ad_astra:glacio_globe.",
+      "reward": "250 опыта и два золотых яблока."
+    }
+  ]
 }
