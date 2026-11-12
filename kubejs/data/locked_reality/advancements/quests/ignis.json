@@ -21,6 +21,11 @@
       "conditions": {
         "entity": {
           "type": "cataclysm:ignis"
+        },
+        "player": {
+          "location": {
+            "dimension": "minecraft:the_nether"
+          }
         }
       }
     }
