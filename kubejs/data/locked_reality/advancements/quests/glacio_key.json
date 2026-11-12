@@ -1,5 +1,5 @@
 {
-  "parent": "locked_reality:glacio",
+  "parent": "locked_reality:quests/ignis",
   "display": {
     "icon": {
       "item": "minecraft:packed_ice"
