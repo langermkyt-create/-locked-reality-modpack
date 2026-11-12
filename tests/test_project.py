@@ -1,5 +1,10 @@
-import json, pathlib, unittest
+import json
+import pathlib
+import unittest
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+DATA = ROOT / "kubejs/data/locked_reality"
+
 
 class ProjectTests(unittest.TestCase):
     def test_pack_manifest(self):
@@ -25,11 +30,30 @@ class ProjectTests(unittest.TestCase):
     def test_planet_chapter_advancements(self):
         planets = ("moon", "mars", "venus", "mercury", "glacio")
         for planet in planets:
-            advancement = ROOT / "kubejs/data/locked_reality/advancements" / f"{planet}.json"
-            function = ROOT / "kubejs/data/locked_reality/functions" / f"chapter_{planet}.mcfunction"
+            advancement = DATA / "advancements" / f"{planet}.json"
+            function = DATA / "functions" / f"chapter_{planet}.mcfunction"
             data = json.loads(advancement.read_text(encoding="utf-8"))
             self.assertIn("minecraft:changed_dimension", data["criteria"]["arrive"]["trigger"])
             self.assertTrue(function.is_file())
+
+    def test_quest_chain_json_and_reward_functions(self):
+        quest_ids = ("moon_relics", "mars_core", "venus_filter", "mercury_seal", "glacio_key", "final_wither")
+        for quest_id in quest_ids:
+            advancement = DATA / "advancements/quests" / f"{quest_id}.json"
+            data = json.loads(advancement.read_text(encoding="utf-8"))
+            self.assertTrue(data.get("criteria"))
+            self.assertTrue(data.get("requirements"))
+            reward_function = data["rewards"]["function"].split(":", 1)[1]
+            self.assertTrue((DATA / "functions" / f"{reward_function}.mcfunction").is_file())
+
+    def test_all_advancement_parents_exist(self):
+        for advancement in (DATA / "advancements").rglob("*.json"):
+            data = json.loads(advancement.read_text(encoding="utf-8"))
+            parent = data.get("parent")
+            if parent and parent.startswith("locked_reality:"):
+                relative = parent.split(":", 1)[1]
+                self.assertTrue((DATA / "advancements" / f"{relative}.json").is_file(), parent)
+
 
 if __name__ == "__main__":
     unittest.main()
