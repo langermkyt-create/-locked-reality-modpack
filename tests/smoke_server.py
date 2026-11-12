@@ -52,7 +52,7 @@ def main():
                 pending += chunk
                 while b"\n" in pending:
                     raw, pending = pending.split(b"\n", 1)
-                    line = raw.decode("utf-8", errors="replace") + "\\n"
+                    line = raw.decode("utf-8", errors="replace") + "\n"
                     lines.append(line)
                     print(line, end="", flush=True)
                     if "Done (" in line:
@@ -69,6 +69,18 @@ def main():
             raise RuntimeError("The custom KubeJS story script was not loaded by the server")
         if "00_intro.js" in output and "0 errors" not in output:
             raise RuntimeError("KubeJS reported an error while loading the story script")
+        log_file = SERVER / "logs" / "latest.log"
+        server_log = log_file.read_text(encoding="utf-8", errors="replace") if log_file.exists() else output
+        invalid_markers = (
+            "Parsing error loading custom advancement locked_reality:",
+            "Couldn't load advancement locked_reality:",
+            "Couldn't parse data file locked_reality:",
+            "Error loading advancement locked_reality:",
+        )
+        invalid_lines = [line for line in server_log.splitlines()
+                         if any(marker in line for marker in invalid_markers)]
+        if invalid_lines:
+            raise RuntimeError("Custom story advancements failed to load:\\n" + "\\n".join(invalid_lines))
     finally:
         proc.terminate()
         try:
