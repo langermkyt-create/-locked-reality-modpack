@@ -44,10 +44,11 @@ def resolve_projects():
     resolved, queue = {}, list(manifest["projects"])
     while queue:
         project = queue.pop(0)
-        if project in resolved:
-            continue
         version = get_version(project)
-        resolved[project] = version
+        canonical_id = version.get("project_id") or project
+        if canonical_id in resolved:
+            continue
+        resolved[canonical_id] = version
         for dep in version.get("dependencies", []):
             if dep.get("dependency_type") != "required":
                 continue
@@ -129,7 +130,7 @@ def main():
             if source.exists():
                 for item in source.rglob("*"):
                     if item.is_file():
-                        zf.write(item, item.relative_to(ROOT).as_posix())
+                        zf.write(item, pathlib.Path("overrides") / item.relative_to(ROOT))
     (BUILD / "resolved-mods.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"pack": str(pack_path), "mods": report}, ensure_ascii=False, indent=2))
 
