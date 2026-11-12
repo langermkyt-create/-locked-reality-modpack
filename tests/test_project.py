@@ -22,5 +22,14 @@ class ProjectTests(unittest.TestCase):
     def test_intro_script_exists(self):
         self.assertTrue((ROOT / "kubejs/server_scripts/00_intro.js").is_file())
 
+    def test_planet_chapter_advancements(self):
+        planets = ("moon", "mars", "venus", "mercury", "glacio")
+        for planet in planets:
+            advancement = ROOT / "kubejs/data/locked_reality/advancements" / f"{planet}.json"
+            function = ROOT / "kubejs/data/locked_reality/functions" / f"chapter_{planet}.mcfunction"
+            data = json.loads(advancement.read_text(encoding="utf-8"))
+            self.assertIn("minecraft:changed_dimension", data["criteria"]["arrive"]["trigger"])
+            self.assertTrue(function.is_file())
+
 if __name__ == "__main__":
     unittest.main()
