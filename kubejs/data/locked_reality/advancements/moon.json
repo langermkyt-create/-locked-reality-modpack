@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:compass"
+    },
+    "title": {
+      "text": "ГЛАВА I — Луна"
+    },
+    "description": {
+      "text": "Ты нашёл первый след мага. Исследуй руины и собери координаты следующего мира."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "arrive": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "ad_astra:moon"
+      }
+    }
+  },
+  "rewards": {
+    "function": "locked_reality:chapter_moon"
+  }
+}
