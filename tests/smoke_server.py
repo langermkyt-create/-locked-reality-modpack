@@ -22,6 +22,13 @@ def main():
     mods_dir.mkdir(exist_ok=True)
     for jar in (BUILD / "mods").glob("*.jar"):
         shutil.copy2(jar, mods_dir / jar.name)
+    source_kubejs = ROOT / "kubejs"
+    if source_kubejs.exists():
+        shutil.copytree(source_kubejs, SERVER / "kubejs", dirs_exist_ok=True)
+    (SERVER / "server.properties").write_text(
+        "level-name=world\ndifficulty=normal\ngamemode=survival\nspawn-protection=0\n",
+        encoding="utf-8"
+    )
     (SERVER / "eula.txt").write_text("eula=true\n", encoding="utf-8")
     run_script = SERVER / "run.sh"
     if not run_script.exists():
