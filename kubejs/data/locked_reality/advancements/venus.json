@@ -24,5 +24,6 @@
   },
   "rewards": {
     "function": "locked_reality:chapter_venus"
-  }
+  },
+  "parent": "locked_reality:quests/harbinger"
 }
