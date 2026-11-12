@@ -1,0 +1,73 @@
+name: Build release packages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "build.py"
+      - "build_curseforge.py"
+      - "pack/**"
+      - "kubejs/**"
+      - "config/**"
+      - "defaultconfigs/**"
+      - "tests/**"
+      - ".github/workflows/release-packages.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-smoke-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Compile and unit-test project
+        run: |
+          python -m compileall -q .
+          python -m unittest discover -s tests -v
+      - name: Resolve mods and build Modrinth pack
+        run: python build.py
+      - name: Build CurseForge import archive
+        run: python build_curseforge.py
+      - name: Smoke-test Forge dedicated server
+        run: python tests/smoke_server.py
+      - name: Validate package archives
+        run: |
+          python - <<'PY'
+          import pathlib, zipfile, json
+          root = pathlib.Path("build")
+          mrpack = root / "locked-reality-0.1.0.mrpack"
+          curse = root / "locked-reality-0.1.0-curseforge.zip"
+          for path in (mrpack, curse):
+              assert path.is_file() and path.stat().st_size > 1000, path
+              with zipfile.ZipFile(path) as archive:
+                  assert archive.testzip() is None, path
+          with zipfile.ZipFile(curse) as archive:
+              manifest = json.loads(archive.read("manifest.json"))
+              assert manifest["manifestType"] == "minecraftModpack"
+              assert manifest["minecraft"]["version"] == "1.20.1"
+          print("Both archives passed ZIP integrity checks.")
+          PY
+      - name: Upload installable packages and logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: locked-reality-release-candidate
+          path: |
+            build/locked-reality-0.1.0.mrpack
+            build/locked-reality-0.1.0-curseforge.zip
+            build/resolved-mods.json
+            build/server-smoke.log
+          if-no-files-found: error
+          retention-days: 30
