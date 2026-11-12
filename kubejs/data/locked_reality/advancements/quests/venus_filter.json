@@ -5,10 +5,10 @@
       "item": "minecraft:glass"
     },
     "title": {
-      "text": "Ядовитое небо — Фильтр атмосферы"
+      "text": "Ядовитое небо — фильтр атмосферы"
     },
     "description": {
-      "text": "Подготовь 8 стеклянных блоков, 4 огненных порошка и 5 осколков памяти после победы над Харбингером."
+      "text": "Собери 6 слитков калорита, 16 венерианских кирпичей и 5 осколков памяти."
     },
     "frame": "task",
     "show_toast": true,
@@ -16,16 +16,16 @@
     "hidden": false
   },
   "criteria": {
-    "glass": {
+    "calorite": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:glass"
+              "ad_astra:calorite_ingot"
             ],
             "count": {
-              "min": 8
+              "min": 6
             }
           }
         ],
@@ -36,16 +36,16 @@
         }
       }
     },
-    "powder": {
+    "venus_bricks": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:blaze_powder"
+              "ad_astra:venus_stone_bricks"
             ],
             "count": {
-              "min": 4
+              "min": 16
             }
           }
         ],
@@ -79,10 +79,10 @@
   },
   "requirements": [
     [
-      "glass"
+      "calorite"
     ],
     [
-      "powder"
+      "venus_bricks"
     ],
     [
       "relic"
