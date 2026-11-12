@@ -10,7 +10,7 @@
   "selection_policy": "latest stable Modrinth release compatible with Minecraft 1.20.1 and Forge; required dependencies are resolved recursively",
   "notes": [
     "The first playable technical base contains space exploration and scripting.",
-    "The quest system and custom planet content are staged separately; no unverified FTB Quests files are bundled.",
+    "The quest progression is implemented as Minecraft advancements and reward functions; FTB Quests is not bundled. Custom planet-specific structures are still planned.",
     "YUNG's Better Dungeons adds additional overworld dungeons for early exploration; its required YUNG's API dependency is resolved automatically.",
     "L_Ender's Cataclysm adds challenging boss dungeons; required Curios API and Lionfish-API dependencies are resolved from Modrinth metadata."
   ]
