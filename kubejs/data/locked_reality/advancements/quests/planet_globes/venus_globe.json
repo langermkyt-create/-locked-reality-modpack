@@ -37,5 +37,10 @@
   "rewards": {
     "function": "locked_reality:quest_globe_venus",
     "experience": 180
-  }
+  },
+  "requirements": [
+    [
+      "globe"
+    ]
+  ]
 }
