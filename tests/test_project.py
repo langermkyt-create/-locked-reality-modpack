@@ -97,6 +97,9 @@ class ProjectTests(unittest.TestCase):
         boss_spawn = (DATA / "functions/quest_ender_guardian.mcfunction").read_text(encoding="utf-8")
         self.assertIn("locked_reality:mage_citadel", boss_spawn)
         self.assertIn("locked_reality_final_boss", boss_spawn)
+        self.assertIn("bossbar add locked_reality:architect", boss_spawn)
+        tick_tag = json.loads((ROOT / "kubejs/data/minecraft/tags/functions/tick.json").read_text(encoding="utf-8"))
+        self.assertIn("locked_reality:architect_tick", tick_tag["values"])
         finale = json.loads((DATA / "advancements/quests/final_wither.json").read_text(encoding="utf-8"))
         self.assertIn("locked_reality_final_boss", finale["criteria"]["defeat_architect"]["conditions"]["entity"]["nbt"])
 
