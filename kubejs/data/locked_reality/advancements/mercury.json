@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:compass"
+    },
+    "title": {
+      "text": "ГЛАВА IV — Мир мёртвого солнца"
+    },
+    "description": {
+      "text": "Здесь находится печать, удерживающая часть тюрьмы мага."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "arrive": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "ad_astra:mercury"
+      }
+    }
+  },
+  "rewards": {
+    "function": "locked_reality:chapter_mercury"
+  }
+}
