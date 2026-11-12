@@ -22,6 +22,12 @@ def main():
     mods_dir.mkdir(exist_ok=True)
     for jar in (BUILD / "mods").glob("*.jar"):
         shutil.copy2(jar, mods_dir / jar.name)
+    installed_mod_names = [jar.name.lower().replace("-", "").replace("_", "") for jar in mods_dir.glob("*.jar")]
+    required_mod_tokens = ("cataclysm", "yungsbetterdungeons", "yungsapi", "curios", "lionfishapi")
+    missing_mods = [token for token in required_mod_tokens
+                    if not any(token in name for name in installed_mod_names)]
+    if missing_mods:
+        raise RuntimeError("Required adventure mods/dependencies are missing: " + ", ".join(missing_mods))
     source_kubejs = ROOT / "kubejs"
     if source_kubejs.exists():
         shutil.copytree(source_kubejs, SERVER / "kubejs", dirs_exist_ok=True)
