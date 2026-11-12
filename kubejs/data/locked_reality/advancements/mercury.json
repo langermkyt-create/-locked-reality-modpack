@@ -24,5 +24,6 @@
   },
   "rewards": {
     "function": "locked_reality:chapter_mercury"
-  }
+  },
+  "parent": "locked_reality:quests/venus_filter"
 }
