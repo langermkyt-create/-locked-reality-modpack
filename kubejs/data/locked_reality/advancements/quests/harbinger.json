@@ -21,6 +21,11 @@
       "conditions": {
         "entity": {
           "type": "cataclysm:the_harbinger"
+        },
+        "player": {
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
         }
       }
     }
