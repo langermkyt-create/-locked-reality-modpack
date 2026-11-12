@@ -1,18 +1,77 @@
 {
   "parent": "locked_reality:glacio",
   "display": {
-    "icon": {"item": "minecraft:packed_ice"},
-    "title": {"text": "Ледяная граница — Ключ цитадели"},
-    "description": {"text": "Принеси 16 плотного льда и алмаз — последняя дверь должна открыться."},
+    "icon": {
+      "item": "minecraft:packed_ice"
+    },
+    "title": {
+      "text": "Ледяная граница — Ключ цитадели"
+    },
+    "description": {
+      "text": "Принеси 16 плотного льда, алмаз и 5 осколков — последний ключ должен открыться."
+    },
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "ice": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:packed_ice"], "count": {"min": 16}}]}},
-    "diamond": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:diamond"]}]}}
+    "ice": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:packed_ice"
+            ],
+            "count": {
+              "min": 16
+            }
+          }
+        ]
+      }
+    },
+    "diamond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:diamond"
+            ]
+          }
+        ]
+      }
+    },
+    "relic": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:amethyst_shard"
+            ],
+            "count": {
+              "min": 5
+            }
+          }
+        ]
+      }
+    }
   },
-  "requirements": [["ice"], ["diamond"]],
-  "rewards": {"function": "locked_reality:quest_glacio_key", "experience": 300}
+  "requirements": [
+    [
+      "ice"
+    ],
+    [
+      "diamond"
+    ],
+    [
+      "relic"
+    ]
+  ],
+  "rewards": {
+    "function": "locked_reality:quest_glacio_key",
+    "experience": 300
+  }
 }
