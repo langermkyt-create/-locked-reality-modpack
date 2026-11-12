@@ -4,17 +4,74 @@
   "loader": "Forge",
   "implementation": "Vanilla advancement tree and reward functions bundled as a KubeJS data pack",
   "chapters": [
-    {"id":"moon","planet":"ad_astra:moon","quest":"moon_relics","requirements":{"minecraft:iron_ingot":8,"minecraft:redstone":4},"reward":"2 amethyst shards; 80 XP"},
-    {"id":"mars","planet":"ad_astra:mars","quest":"mars_core","requirements":{"minecraft:copper_ingot":8,"minecraft:compass":1},"reward":"3 amethyst shards; 120 XP"},
-    {"id":"venus","planet":"ad_astra:venus","quest":"venus_filter","requirements":{"minecraft:glass":8,"minecraft:blaze_powder":4},"reward":"4 amethyst shards; 160 XP"},
-    {"id":"mercury","planet":"ad_astra:mercury","quest":"mercury_seal","requirements":{"minecraft:gold_ingot":8,"minecraft:clock":1},"reward":"5 amethyst shards; 200 XP"},
-    {"id":"glacio","planet":"ad_astra:glacio","quest":"glacio_key","requirements":{"minecraft:packed_ice":16,"minecraft:diamond":1},"reward":"8 amethyst shards; 300 XP"},
-    {"id":"citadel","quest":"final_wither","requirements":{"minecraft:wither defeated":1},"reward":"dragon egg; 1000 XP"}
+    {
+      "id": "moon",
+      "planet": "ad_astra:moon",
+      "quest": "moon_relics",
+      "requirements": {
+        "minecraft:iron_ingot": 8,
+        "minecraft:redstone": 4
+      },
+      "reward": "2 amethyst shards; 80 XP"
+    },
+    {
+      "id": "mars",
+      "planet": "ad_astra:mars",
+      "quest": "mars_core",
+      "requirements": {
+        "minecraft:copper_ingot": 8,
+        "minecraft:compass": 1,
+        "minecraft:amethyst_shard": 2
+      },
+      "reward": "3 amethyst shards; 120 XP"
+    },
+    {
+      "id": "venus",
+      "planet": "ad_astra:venus",
+      "quest": "venus_filter",
+      "requirements": {
+        "minecraft:glass": 8,
+        "minecraft:blaze_powder": 4,
+        "minecraft:amethyst_shard": 3
+      },
+      "reward": "4 amethyst shards; 160 XP"
+    },
+    {
+      "id": "mercury",
+      "planet": "ad_astra:mercury",
+      "quest": "mercury_seal",
+      "requirements": {
+        "minecraft:gold_ingot": 8,
+        "minecraft:clock": 1,
+        "minecraft:amethyst_shard": 4
+      },
+      "reward": "5 amethyst shards; 200 XP"
+    },
+    {
+      "id": "glacio",
+      "planet": "ad_astra:glacio",
+      "quest": "glacio_key",
+      "requirements": {
+        "minecraft:packed_ice": 16,
+        "minecraft:diamond": 1,
+        "minecraft:amethyst_shard": 5
+      },
+      "reward": "8 amethyst shards; 300 XP"
+    },
+    {
+      "id": "citadel",
+      "quest": "final_wither",
+      "requirements": {
+        "minecraft:wither defeated": 1
+      },
+      "reward": "dragon egg; 1000 XP"
+    }
   ],
   "finale": "Defeat the Wither after unlocking the Glacio key. The finale is a vanilla boss encounter, not a custom-coded boss.",
   "notes": [
     "Objectives are real Minecraft advancements with inventory/entity triggers and reward functions.",
     "Planet arrival triggers remain in place; the item objectives are not dimension-locked because inventory triggers are vanilla-global.",
-    "The campaign is an initial playable quest chain, not yet a validated 20–30 hour experience."
+    "The campaign is an initial playable quest chain, not yet a validated 20–30 hour experience.",
+    "Every chapter after the Moon requires the amethyst story fragments rewarded by the previous chapter; this creates a resource-gated progression chain."
   ]
 }
