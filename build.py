@@ -125,7 +125,7 @@ def main():
     pack_path = BUILD / "locked-reality-0.1.0.mrpack"
     with zipfile.ZipFile(pack_path, "w", zipfile.ZIP_DEFLATED) as zf:
         zf.writestr("modrinth.index.json", json.dumps(index, ensure_ascii=False, indent=2))
-        for folder in ("kubejs", "config", "defaultconfigs"):
+        for folder in ("kubejs", "config", "defaultconfigs", "resourcepacks", "shaderpacks"):
             source = ROOT / folder
             if source.exists():
                 for item in source.rglob("*"):
