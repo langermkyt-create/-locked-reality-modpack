@@ -5,10 +5,10 @@
       "item": "minecraft:gold_ingot"
     },
     "title": {
-      "text": "Мёртвое солнце — Золотая печать"
+      "text": "Мёртвое солнце — золотая печать"
     },
     "description": {
-      "text": "Собери 8 золотых слитков, часы и 7 осколков, чтобы настроить солнечную печать."
+      "text": "Собери 8 золотых слитков, 16 кирпичей Меркурия и 7 осколков памяти."
     },
     "frame": "task",
     "show_toast": true,
@@ -36,14 +36,17 @@
         }
       }
     },
-    "clock": {
+    "mercury_bricks": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:clock"
-            ]
+              "ad_astra:mercury_stone_bricks"
+            ],
+            "count": {
+              "min": 16
+            }
           }
         ],
         "player": {
@@ -79,7 +82,7 @@
       "gold"
     ],
     [
-      "clock"
+      "mercury_bricks"
     ],
     [
       "relic"
