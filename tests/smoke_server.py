@@ -50,8 +50,8 @@ def main():
                 if not chunk:
                     continue
                 pending += chunk
-                while b"\\n" in pending:
-                    raw, pending = pending.split(b"\\n", 1)
+                while b"\n" in pending:
+                    raw, pending = pending.split(b"\n", 1)
                     line = raw.decode("utf-8", errors="replace") + "\\n"
                     lines.append(line)
                     print(line, end="", flush=True)
