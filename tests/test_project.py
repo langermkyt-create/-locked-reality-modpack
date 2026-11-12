@@ -17,6 +17,7 @@ class ProjectTests(unittest.TestCase):
         data = json.loads((ROOT / "pack/mods.json").read_text(encoding="utf-8"))
         self.assertIn("ad-astra", data["projects"])
         self.assertIn("kubejs", data["projects"])
+        self.assertIn("yungs-better-dungeons", data["projects"])
 
     def test_story_has_five_chapters(self):
         data = json.loads((ROOT / "quests/story.json").read_text(encoding="utf-8"))
