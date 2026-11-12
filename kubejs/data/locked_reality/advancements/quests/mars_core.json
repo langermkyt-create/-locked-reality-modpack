@@ -5,10 +5,10 @@
       "item": "minecraft:copper_ingot"
     },
     "title": {
-      "text": "Красная пустошь — Ядро машин"
+      "text": "Красная пустошь — навигационное ядро"
     },
     "description": {
-      "text": "Найди 8 медных слитков, компас и 2 осколка лунного маяка."
+      "text": "Добыть 8 слитков острума, 16 марсианских кирпичей и принести 2 осколка маяка."
     },
     "frame": "task",
     "show_toast": true,
@@ -16,13 +16,13 @@
     "hidden": false
   },
   "criteria": {
-    "copper": {
+    "ostrum": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:copper_ingot"
+              "ad_astra:ostrum_ingot"
             ],
             "count": {
               "min": 8
@@ -36,14 +36,17 @@
         }
       }
     },
-    "compass": {
+    "mars_bricks": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:compass"
-            ]
+              "ad_astra:mars_stone_bricks"
+            ],
+            "count": {
+              "min": 16
+            }
           }
         ],
         "player": {
@@ -76,10 +79,10 @@
   },
   "requirements": [
     [
-      "copper"
+      "ostrum"
     ],
     [
-      "compass"
+      "mars_bricks"
     ],
     [
       "relic"
