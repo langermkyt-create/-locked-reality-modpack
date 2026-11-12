@@ -100,5 +100,37 @@
     "Later planetary resource quests require the accumulated amethyst fragments from earlier chapter rewards; the Harbinger and Ignis boss fights provide the missing fragments.",
     "Cataclysm boss objectives are linked to Harbinger, Ignis and Ender Guardian entity defeat triggers. Their boss structures are supplied by the Cataclysm mod.",
     "The Mage Citadel is now a custom datapack dimension with a scripted arena build function. The final boss is an enhanced, named Wither, not a new entity model or custom AI."
+  ],
+  "optional_exploration": [
+    {
+      "quest": "planet_globes/moon_globe",
+      "dimension": "ad_astra:moon",
+      "objective": "Find the Moon fortress and obtain ad_astra:moon_globe",
+      "reward": "120 XP; golden apple"
+    },
+    {
+      "quest": "planet_globes/mars_globe",
+      "dimension": "ad_astra:mars",
+      "objective": "Find the Mars fortress and obtain ad_astra:mars_globe",
+      "reward": "160 XP; 3 emeralds"
+    },
+    {
+      "quest": "planet_globes/venus_globe",
+      "dimension": "ad_astra:venus",
+      "objective": "Find the Venus fortress and obtain ad_astra:venus_globe",
+      "reward": "180 XP; golden apple"
+    },
+    {
+      "quest": "planet_globes/mercury_globe",
+      "dimension": "ad_astra:mercury",
+      "objective": "Find the Mercury fortress and obtain ad_astra:mercury_globe",
+      "reward": "200 XP; diamond"
+    },
+    {
+      "quest": "planet_globes/glacio_globe",
+      "dimension": "ad_astra:glacio",
+      "objective": "Find the Glacio fortress and obtain ad_astra:glacio_globe",
+      "reward": "250 XP; 2 golden apples"
+    }
   ]
 }
