@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:compass"
+    },
+    "title": {
+      "text": "ЗАПЕРТАЯ РЕАЛЬНОСТЬ"
+    },
+    "description": {
+      "text": "Собери осколки памяти на планетах, одолей стражей и доберись до Цитадели мага."
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "awakened": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}
