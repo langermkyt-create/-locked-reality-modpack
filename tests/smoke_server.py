@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Install the pinned Forge server, load resolved mods, and wait for Done."""
-import os, pathlib, shutil, subprocess, sys, time, urllib.request
+import os, pathlib, shutil, subprocess, sys, time, urllib.request, selectors
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build"
@@ -29,20 +29,26 @@ def main():
     proc = subprocess.Popen(["bash", "run.sh", "--nogui"], cwd=SERVER, stdout=subprocess.PIPE,
                             stderr=subprocess.STDOUT, text=True, bufsize=1)
     lines, started = [], False
-    deadline = time.time() + 240
+    deadline = time.time() + 300
+    selector = selectors.DefaultSelector()
+    selector.register(proc.stdout, selectors.EVENT_READ)
     try:
         while time.time() < deadline:
-            line = proc.stdout.readline()
-            if line:
-                lines.append(line)
-                print(line, end="")
-                if "Done (" in line and "For help" in line:
-                    started = True
-                    break
-            elif proc.poll() is not None:
+            if proc.poll() is not None:
+                break
+            events = selector.select(timeout=1)
+            for key, _ in events:
+                line = key.fileobj.readline()
+                if line:
+                    lines.append(line)
+                    print(line, end="")
+                    if "Done (" in line:
+                        started = True
+                        break
+            if started:
                 break
         if not started:
-            raise RuntimeError("Forge server did not reach the Done state")
+            raise RuntimeError("Forge server did not reach the Done state within 300 seconds")
     finally:
         proc.terminate()
         try:
