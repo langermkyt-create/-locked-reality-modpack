@@ -1,0 +1,14 @@
+{
+  "name": "Запертая реальность",
+  "id": "locked-reality",
+  "minecraft": "1.20.1",
+  "loader": "forge",
+  "java": 17,
+  "target_playtime_hours": {
+    "minimum": 20,
+    "maximum": 30
+  },
+  "language": "ru_RU",
+  "status": "scaffold",
+  "mods": []
+}
