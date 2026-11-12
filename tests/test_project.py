@@ -77,6 +77,18 @@ class ProjectTests(unittest.TestCase):
             for criterion in data["criteria"].values():
                 self.assertEqual(criterion["conditions"]["player"]["location"]["dimension"], dimension)
 
+    def test_mage_citadel_dimension_and_final_boss(self):
+        dimension = json.loads((DATA / "dimension/mage_citadel.json").read_text(encoding="utf-8"))
+        self.assertEqual(dimension["type"], "minecraft:the_end")
+        self.assertEqual(dimension["generator"]["type"], "minecraft:flat")
+        arena = (DATA / "functions/build_citadel.mcfunction").read_text(encoding="utf-8")
+        self.assertIn("minecraft:polished_blackstone_bricks", arena)
+        boss_spawn = (DATA / "functions/quest_ender_guardian.mcfunction").read_text(encoding="utf-8")
+        self.assertIn("locked_reality:mage_citadel", boss_spawn)
+        self.assertIn("locked_reality_final_boss", boss_spawn)
+        finale = json.loads((DATA / "advancements/quests/final_wither.json").read_text(encoding="utf-8"))
+        self.assertIn("locked_reality_final_boss", finale["criteria"]["defeat_architect"]["conditions"]["entity"]["nbt"])
+
     def test_smoke_test_checks_advancement_load_errors(self):
         smoke = (ROOT / "tests/smoke_server.py").read_text(encoding="utf-8")
         self.assertIn("Parsing error loading custom advancement locked_reality:", smoke)
