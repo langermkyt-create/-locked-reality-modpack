@@ -24,5 +24,6 @@
   },
   "rewards": {
     "function": "locked_reality:chapter_glacio"
-  }
+  },
+  "parent": "locked_reality:quests/ignis"
 }
