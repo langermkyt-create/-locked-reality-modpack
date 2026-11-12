@@ -28,7 +28,12 @@
               "min": 8
             }
           }
-        ]
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:venus"
+          }
+        }
       }
     },
     "powder": {
@@ -43,7 +48,12 @@
               "min": 4
             }
           }
-        ]
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:venus"
+          }
+        }
       }
     },
     "relic": {
@@ -58,7 +68,12 @@
               "min": 5
             }
           }
-        ]
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:venus"
+          }
+        }
       }
     }
   },
