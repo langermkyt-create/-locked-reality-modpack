@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:compass"
+    },
+    "title": {
+      "text": "ГЛАВА V — Ледяная граница"
+    },
+    "description": {
+      "text": "Последний мир перед цитаделью. Найди путь к финальному порталу."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "arrive": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "ad_astra:glacio"
+      }
+    }
+  },
+  "rewards": {
+    "function": "locked_reality:chapter_glacio"
+  }
+}
