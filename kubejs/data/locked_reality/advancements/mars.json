@@ -24,5 +24,6 @@
   },
   "rewards": {
     "function": "locked_reality:chapter_mars"
-  }
+  },
+  "parent": "locked_reality:quests/moon_relics"
 }
