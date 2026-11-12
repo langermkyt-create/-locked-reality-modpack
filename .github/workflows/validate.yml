@@ -46,7 +46,7 @@ jobs:
                       z.write(p, p.as_posix())
                   elif p.is_dir():
                       for f in p.rglob("*"):
-                          if f.is_file() and ".git" not in f.parts:
+                          if f.is_file() and ".git" not in f.parts and "__pycache__" not in f.parts and f.suffix != ".pyc":
                               z.write(f, f.as_posix())
           PY
       - name: Upload project and modpack
