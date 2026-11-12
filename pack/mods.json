@@ -1,0 +1,13 @@
+{
+  "minecraft": "1.20.1",
+  "loader": "forge",
+  "projects": [
+    "ad-astra",
+    "kubejs"
+  ],
+  "selection_policy": "latest stable Modrinth release compatible with Minecraft 1.20.1 and Forge; required dependencies are resolved recursively",
+  "notes": [
+    "The first playable technical base contains space exploration and scripting.",
+    "The quest system and custom planet content are staged separately; no unverified FTB Quests files are bundled."
+  ]
+}
