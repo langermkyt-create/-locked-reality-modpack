@@ -5,7 +5,7 @@
     30
   ],
   "duration_status": "planned_target_not_measured",
-  "current_playable_scope": "Five planetary arrival scenes, five resource quests, three Cataclysm boss milestones, and a Wither finale. The full 20–30 hour story is not implemented yet.",
+  "current_playable_scope": "Five planetary arrival scenes, five dimension-specific resource quests, three Cataclysm boss milestones, a custom Mage Citadel dimension and a named, enhanced Wither finale. The full 20–30 hour story is not implemented yet.",
   "premise": "Неизвестный маг запер героя в искусственной реальности, собранной из нескольких миров. Сломанный маяк ведёт к планетам, а каждый найденный осколок восстанавливает часть навигации и раскрывает правду о тюрьме.",
   "chapters": [
     {
@@ -80,5 +80,16 @@
   "notes": [
     "The Cataclysm mod supplies boss dungeons and boss entities; quest triggers track defeating the Harbinger, Ignis and Ender Guardian.",
     "The current finale is a Wither encounter after the Ender Guardian. It is not a custom-built mage boss or custom citadel dimension."
-  ]
+  ],
+  "finale": {
+    "title": "Цитадель мага",
+    "dimension": "locked_reality:mage_citadel",
+    "sequence": [
+      "Победить Стража Края",
+      "Перейти в Цитадель",
+      "Пережить бой с Архитектором — усиленным Иссушителем",
+      "Получить яйцо дракона и завершить текущую сюжетную ветку"
+    ],
+    "limitation": "Цитадель строится функцией из блоков в плоском измерении; Архитектор использует модель и AI Иссушителя, но имеет собственное имя, повышенное здоровье и урон."
+  }
 }
