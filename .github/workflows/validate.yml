@@ -1,4 +1,4 @@
-name: Project validation
+name: Build and test modpack
 
 on:
   push:
@@ -10,35 +10,29 @@ permissions:
   contents: read
 
 jobs:
-  validate:
-    name: Validate project files
+  project-tests:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Validate JSON files
+      - name: Unit and structure tests
         run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          files = sorted(Path(".").rglob("*.json"))
-          for path in files:
-              if ".git" in path.parts:
-                  continue
-              json.loads(path.read_text(encoding="utf-8"))
-              print(f"OK: {path}")
-          print(f"Validated {len(files)} JSON file(s)")
-          PY
-
-      - name: Compile Python test scripts
-        run: python -m compileall -q tests
-
-      - name: Validate pack metadata
-        run: python tests/check_project.py
+          python -m compileall -q .
+          python -m unittest discover -s tests -v
+      - name: Resolve mods, verify hashes, and build Modrinth pack
+        run: python build.py
+      - name: Forge dedicated-server smoke test
+        run: python tests/smoke_server.py
+      - name: Upload build and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locked-reality-build
+          path: |
+            build/locked-reality-0.1.0.mrpack
+            build/resolved-mods.json
+            build/server-smoke.log
+          if-no-files-found: warn
+          retention-days: 14
