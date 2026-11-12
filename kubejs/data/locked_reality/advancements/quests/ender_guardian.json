@@ -21,6 +21,11 @@
       "conditions": {
         "entity": {
           "type": "cataclysm:ender_guardian"
+        },
+        "player": {
+          "location": {
+            "dimension": "minecraft:the_end"
+          }
         }
       }
     }
