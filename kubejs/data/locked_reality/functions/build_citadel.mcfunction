@@ -37,7 +37,6 @@ setblock -8 62 -12 minecraft:lantern
 setblock 8 62 -12 minecraft:lantern
 setblock -8 62 12 minecraft:lantern
 setblock 8 62 12 minecraft:lantern
-forceload remove -32 -32 31 31
 fill -4 61 -20 -4 70 -20 minecraft:obsidian
 fill 4 61 -20 4 70 -20 minecraft:obsidian
 fill -4 70 -20 4 70 -20 minecraft:crying_obsidian
@@ -64,3 +63,4 @@ setblock -4 71 15 minecraft:lantern
 setblock 4 71 15 minecraft:lantern
 setblock -4 63 15 minecraft:lantern
 setblock 4 63 15 minecraft:lantern
+forceload remove -32 -32 31 31
