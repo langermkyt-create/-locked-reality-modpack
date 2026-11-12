@@ -1,0 +1,18 @@
+{
+  "parent": "locked_reality:mercury",
+  "display": {
+    "icon": {"item": "minecraft:gold_ingot"},
+    "title": {"text": "Мёртвое солнце — Золотая печать"},
+    "description": {"text": "Собери 8 золотых слитков и часы, чтобы настроить солнечную печать."},
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "gold": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:gold_ingot"], "count": {"min": 8}}]}},
+    "clock": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:clock"]}]}}
+  },
+  "requirements": [["gold"], ["clock"]],
+  "rewards": {"function": "locked_reality:quest_mercury_seal", "experience": 200}
+}
