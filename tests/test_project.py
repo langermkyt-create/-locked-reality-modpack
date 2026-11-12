@@ -29,6 +29,12 @@ class ProjectTests(unittest.TestCase):
     def test_intro_script_exists(self):
         self.assertTrue((ROOT / "kubejs/server_scripts/00_intro.js").is_file())
 
+    def test_story_has_one_visible_advancement_root(self):
+        root = json.loads((DATA / "advancements/story.json").read_text(encoding="utf-8"))
+        self.assertEqual(root["criteria"]["awakened"]["trigger"], "minecraft:tick")
+        moon = json.loads((DATA / "advancements/moon.json").read_text(encoding="utf-8"))
+        self.assertEqual(moon["parent"], "locked_reality:story")
+
     def test_planet_chapter_advancements(self):
         planets = ("moon", "mars", "venus", "mercury", "glacio")
         for planet in planets:
