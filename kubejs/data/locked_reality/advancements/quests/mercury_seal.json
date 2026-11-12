@@ -28,7 +28,12 @@
               "min": 8
             }
           }
-        ]
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:mercury"
+          }
+        }
       }
     },
     "clock": {
@@ -40,7 +45,12 @@
               "minecraft:clock"
             ]
           }
-        ]
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:mercury"
+          }
+        }
       }
     },
     "relic": {
@@ -55,7 +65,12 @@
               "min": 7
             }
           }
-        ]
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:mercury"
+          }
+        }
       }
     }
   },
