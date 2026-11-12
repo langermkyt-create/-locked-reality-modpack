@@ -5,10 +5,10 @@
       "item": "minecraft:iron_ingot"
     },
     "title": {
-      "text": "Лунные руины — Следы экспедиции"
+      "text": "Лунный маяк — восстановить питание"
     },
     "description": {
-      "text": "Собери 8 железных слитков и 4 красных камня для восстановления маяка."
+      "text": "Собери 8 железных слитков, 4 сыра и 3 ледяных осколка, добытых на Луне."
     },
     "frame": "task",
     "show_toast": true,
@@ -36,16 +36,36 @@
         }
       }
     },
-    "redstone": {
+    "cheese": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:redstone"
+              "ad_astra:cheese"
             ],
             "count": {
               "min": 4
+            }
+          }
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:moon"
+          }
+        }
+      }
+    },
+    "ice_shard": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ad_astra:ice_shard"
+            ],
+            "count": {
+              "min": 3
             }
           }
         ],
@@ -62,7 +82,10 @@
       "iron"
     ],
     [
-      "redstone"
+      "cheese"
+    ],
+    [
+      "ice_shard"
     ]
   ],
   "rewards": {
