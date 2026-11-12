@@ -31,8 +31,6 @@ jobs:
           python -m unittest discover -s tests -v
       - name: Resolve mods, verify hashes, and build Modrinth pack
         run: python build.py
-      - name: Forge dedicated-server smoke test
-        run: python tests/smoke_server.py
       - name: Create source project ZIP
         if: always()
         run: |
@@ -51,15 +49,23 @@ jobs:
                           if f.is_file() and ".git" not in f.parts:
                               z.write(f, f.as_posix())
           PY
-      - name: Upload build and logs
-        if: always()
+      - name: Upload project and modpack
         uses: actions/upload-artifact@v4
         with:
-          name: locked-reality-build
+          name: locked-reality-project
           path: |
             build/locked-reality-0.1.0.mrpack
             build/locked-reality-project.zip
             build/resolved-mods.json
-            build/server-smoke.log
+          if-no-files-found: error
+          retention-days: 14
+      - name: Forge dedicated-server smoke test
+        run: python tests/smoke_server.py
+      - name: Upload server smoke log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: locked-reality-server-test
+          path: build/server-smoke.log
           if-no-files-found: warn
           retention-days: 14
