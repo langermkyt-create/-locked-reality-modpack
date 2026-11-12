@@ -45,7 +45,7 @@ class ProjectTests(unittest.TestCase):
             self.assertTrue(function.is_file())
 
     def test_quest_chain_json_and_reward_functions(self):
-        quest_ids = ("moon_relics", "mars_core", "harbinger", "venus_filter", "mercury_seal", "ignis", "glacio_key", "ender_guardian", "final_wither", "planet_globes/moon_globe", "planet_globes/mars_globe", "planet_globes/venus_globe", "planet_globes/mercury_globe", "planet_globes/glacio_globe")
+        quest_ids = ("moon_relics", "mars_core", "harbinger", "venus_filter", "mercury_seal", "ignis", "glacio_key", "ender_guardian", "final_wither", "planet_globes/moon_globe", "planet_globes/mars_globe", "planet_globes/venus_globe", "planet_globes/mercury_globe", "planet_globes/glacio_globe", "optional_bosses/ancient_remnant", "optional_bosses/netherite_monstrosity")
         for quest_id in quest_ids:
             advancement = DATA / "advancements/quests" / f"{quest_id}.json"
             data = json.loads(advancement.read_text(encoding="utf-8"))
@@ -82,6 +82,8 @@ class ProjectTests(unittest.TestCase):
             "planet_globes/venus_globe": "ad_astra:venus",
             "planet_globes/mercury_globe": "ad_astra:mercury",
             "planet_globes/glacio_globe": "ad_astra:glacio",
+            "optional_bosses/ancient_remnant": "minecraft:overworld",
+            "optional_bosses/netherite_monstrosity": "minecraft:the_nether",
         }
         for quest_id, dimension in dimensions.items():
             data = json.loads((DATA / "advancements/quests" / f"{quest_id}.json").read_text(encoding="utf-8"))
