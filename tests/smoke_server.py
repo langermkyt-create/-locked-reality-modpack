@@ -80,7 +80,7 @@ def main():
         invalid_lines = [line for line in server_log.splitlines()
                          if any(marker in line for marker in invalid_markers)]
         if invalid_lines:
-            raise RuntimeError("Custom story advancements failed to load:\\n" + "\\n".join(invalid_lines))
+            raise RuntimeError("Custom story advancements failed to load:\n" + "\n".join(invalid_lines))
     finally:
         proc.terminate()
         try:
