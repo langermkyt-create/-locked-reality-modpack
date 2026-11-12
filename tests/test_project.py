@@ -47,6 +47,11 @@ class ProjectTests(unittest.TestCase):
             reward_function = data["rewards"]["function"].split(":", 1)[1]
             self.assertTrue((DATA / "functions" / f"{reward_function}.mcfunction").is_file())
 
+    def test_smoke_test_checks_advancement_load_errors(self):
+        smoke = (ROOT / "tests/smoke_server.py").read_text(encoding="utf-8")
+        self.assertIn("Parsing error loading custom advancement locked_reality:", smoke)
+        self.assertIn("Couldn't load advancement locked_reality:", smoke)
+
     def test_all_advancement_parents_exist(self):
         for advancement in (DATA / "advancements").rglob("*.json"):
             data = json.loads(advancement.read_text(encoding="utf-8"))
