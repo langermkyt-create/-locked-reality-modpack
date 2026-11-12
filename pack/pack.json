@@ -9,6 +9,17 @@
     "maximum": 30
   },
   "language": "ru_RU",
-  "status": "scaffold",
-  "mods": []
+  "status": "playable_technical_prototype",
+  "mods": [
+    {
+      "id": "ad-astra",
+      "source": "modrinth",
+      "role": "planetary dimensions and space travel"
+    },
+    {
+      "id": "kubejs",
+      "source": "modrinth",
+      "role": "story triggers and data pack scripting"
+    }
+  ]
 }
