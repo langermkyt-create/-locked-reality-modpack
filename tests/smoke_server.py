@@ -49,6 +49,11 @@ def main():
                 break
         if not started:
             raise RuntimeError("Forge server did not reach the Done state within 300 seconds")
+        output = "".join(lines)
+        if "00_intro.js" not in output or "Loaded script server_scripts:00_intro.js" not in output:
+            raise RuntimeError("The custom KubeJS story script was not loaded by the server")
+        if "00_intro.js" in output and "0 errors" not in output:
+            raise RuntimeError("KubeJS reported an error while loading the story script")
     finally:
         proc.terminate()
         try:
