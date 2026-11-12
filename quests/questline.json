@@ -10,7 +10,8 @@
       "quest": "moon_relics",
       "requirements": {
         "minecraft:iron_ingot": 8,
-        "minecraft:redstone": 4
+        "ad_astra:cheese": 4,
+        "ad_astra:ice_shard": 3
       },
       "reward": "2 amethyst shards; 80 XP"
     },
@@ -19,8 +20,8 @@
       "planet": "ad_astra:mars",
       "quest": "mars_core",
       "requirements": {
-        "minecraft:copper_ingot": 8,
-        "minecraft:compass": 1,
+        "ad_astra:ostrum_ingot": 8,
+        "ad_astra:mars_stone_bricks": 16,
         "minecraft:amethyst_shard": 2
       },
       "reward": "2 amethyst shards; 120 XP"
@@ -38,8 +39,8 @@
       "planet": "ad_astra:venus",
       "quest": "venus_filter",
       "requirements": {
-        "minecraft:glass": 8,
-        "minecraft:blaze_powder": 4,
+        "ad_astra:calorite_ingot": 6,
+        "ad_astra:venus_stone_bricks": 16,
         "minecraft:amethyst_shard": 5
       },
       "reward": "2 amethyst shards; 160 XP"
@@ -50,7 +51,7 @@
       "quest": "mercury_seal",
       "requirements": {
         "minecraft:gold_ingot": 8,
-        "minecraft:clock": 1,
+        "ad_astra:mercury_stone_bricks": 16,
         "minecraft:amethyst_shard": 7
       },
       "reward": "3 amethyst shards; 200 XP"
@@ -69,7 +70,7 @@
       "quest": "glacio_key",
       "requirements": {
         "minecraft:packed_ice": 16,
-        "minecraft:diamond": 1,
+        "ad_astra:ice_shard": 8,
         "minecraft:amethyst_shard": 11
       },
       "reward": "2 amethyst shards; 300 XP"
