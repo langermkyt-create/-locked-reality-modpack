@@ -1,18 +1,80 @@
 {
   "parent": "locked_reality:venus",
   "display": {
-    "icon": {"item": "minecraft:glass"},
-    "title": {"text": "Ядовитое небо — Фильтр атмосферы"},
-    "description": {"text": "Подготовь 8 стеклянных блоков и 4 огненных порошка для фильтра."},
+    "icon": {
+      "item": "minecraft:glass"
+    },
+    "title": {
+      "text": "Ядовитое небо — Фильтр атмосферы"
+    },
+    "description": {
+      "text": "Подготовь 8 стеклянных блоков, 4 огненных порошка и 3 осколка ядра."
+    },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
   "criteria": {
-    "glass": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:glass"], "count": {"min": 8}}]}},
-    "powder": {"trigger": "minecraft:inventory_changed", "conditions": {"items": [{"items": ["minecraft:blaze_powder"], "count": {"min": 4}}]}}
+    "glass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:glass"
+            ],
+            "count": {
+              "min": 8
+            }
+          }
+        ]
+      }
+    },
+    "powder": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:blaze_powder"
+            ],
+            "count": {
+              "min": 4
+            }
+          }
+        ]
+      }
+    },
+    "relic": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:amethyst_shard"
+            ],
+            "count": {
+              "min": 3
+            }
+          }
+        ]
+      }
+    }
   },
-  "requirements": [["glass"], ["powder"]],
-  "rewards": {"function": "locked_reality:quest_venus_filter", "experience": 160}
+  "requirements": [
+    [
+      "glass"
+    ],
+    [
+      "powder"
+    ],
+    [
+      "relic"
+    ]
+  ],
+  "rewards": {
+    "function": "locked_reality:quest_venus_filter",
+    "experience": 160
+  }
 }
