@@ -1,0 +1,41 @@
+{
+  "parent": "locked_reality:glacio",
+  "display": {
+    "icon": {
+      "item": "ad_astra:glacio_globe"
+    },
+    "title": {
+      "text": "Ледяная крепость — глобус Гласио"
+    },
+    "description": {
+      "text": "Найди планетарную крепость и забери её глобус."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "globe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ad_astra:glacio_globe"
+            ]
+          }
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:glacio"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "locked_reality:quest_globe_glacio",
+    "experience": 250
+  }
+}
