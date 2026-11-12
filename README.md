@@ -20,9 +20,16 @@
 4. Лететь на планеты Ad Astra, выполнять задания по сбору ресурсов и получать награды.
 5. Победить Харбингера перед главой Венеры, Игниса перед Гласио, затем Стража Края. После этого тебя перенесёт в Цитадель на финальную битву с Архитектором.
 
+## Установка через CurseForge
+1. Открой CurseForge App и перейди в Minecraft.
+2. Выбери Import и укажи архив `locked-reality-0.1.0-curseforge.zip`.
+3. Дождись установки модов и зависимостей, затем запускай профиль на Minecraft 1.20.1 / Forge 47.4.28.
+
+Для CurseForge используется отдельный `manifest.json` с официальными project/file IDs. JAR-файлы модов не вшиваются в архив: клиент загружает их со страниц авторов, а игровые сценарии и настройки идут в `overrides`.
+
 ## Сборка и проверки
 ```bash
-python build.py
+python build.py\npython build_curseforge.py
 python -m compileall -q .
 python -m unittest discover -s tests -v
 python tests/smoke_server.py
