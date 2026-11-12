@@ -34,24 +34,32 @@ def main():
     if not run_script.exists():
         raise SystemExit("Forge installer did not create run.sh")
     proc = subprocess.Popen(["bash", "run.sh", "--nogui"], cwd=SERVER, stdout=subprocess.PIPE,
-                            stderr=subprocess.STDOUT, text=True, bufsize=1)
+                            stderr=subprocess.STDOUT, bufsize=0)
     lines, started = [], False
     deadline = time.time() + 300
     selector = selectors.DefaultSelector()
     selector.register(proc.stdout, selectors.EVENT_READ)
+    pending = b""
     try:
         while time.time() < deadline:
             if proc.poll() is not None:
                 break
             events = selector.select(timeout=1)
             for key, _ in events:
-                line = key.fileobj.readline()
-                if line:
+                chunk = os.read(key.fileobj.fileno(), 8192)
+                if not chunk:
+                    continue
+                pending += chunk
+                while b"\\n" in pending:
+                    raw, pending = pending.split(b"\\n", 1)
+                    line = raw.decode("utf-8", errors="replace") + "\\n"
                     lines.append(line)
-                    print(line, end="")
+                    print(line, end="", flush=True)
                     if "Done (" in line:
                         started = True
                         break
+                if started:
+                    break
             if started:
                 break
         if not started:
