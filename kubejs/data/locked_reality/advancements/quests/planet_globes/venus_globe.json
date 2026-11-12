@@ -1,0 +1,41 @@
+{
+  "parent": "locked_reality:venus",
+  "display": {
+    "icon": {
+      "item": "ad_astra:venus_globe"
+    },
+    "title": {
+      "text": "Венерианская крепость — глобус Венеры"
+    },
+    "description": {
+      "text": "Найди планетарную крепость и забери её глобус."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "globe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ad_astra:venus_globe"
+            ]
+          }
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:venus"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "locked_reality:quest_globe_venus",
+    "experience": 180
+  }
+}
