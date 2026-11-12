@@ -1,0 +1,32 @@
+{
+  "parent": "locked_reality:quests/mars_core",
+  "display": {
+    "icon": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "title": {
+      "text": "Фабрика древних — Сердце машины"
+    },
+    "description": {
+      "text": "Найди древнюю фабрику и победи Харбингера."
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "defeat_harbinger": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "cataclysm:the_harbinger"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "locked_reality:quest_harbinger",
+    "experience": 250
+  }
+}
