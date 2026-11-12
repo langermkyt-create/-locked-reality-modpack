@@ -133,5 +133,19 @@
       "objective": "Find the Glacio fortress and obtain ad_astra:glacio_globe",
       "reward": "250 XP; 2 golden apples"
     }
+  ],
+  "optional_bosses": [
+    {
+      "quest": "optional_bosses/ancient_remnant",
+      "dimension": "minecraft:overworld",
+      "objective": "Find the desert tomb and defeat cataclysm:ancient_remnant",
+      "reward": "250 XP; diamond"
+    },
+    {
+      "quest": "optional_bosses/netherite_monstrosity",
+      "dimension": "minecraft:the_nether",
+      "objective": "Find the Soul Blacksmith and defeat cataclysm:netherite_monstrosity",
+      "reward": "350 XP; netherite ingot"
+    }
   ]
 }
