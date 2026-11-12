@@ -28,7 +28,12 @@
               "min": 8
             }
           }
-        ]
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:mars"
+          }
+        }
       }
     },
     "compass": {
@@ -40,7 +45,12 @@
               "minecraft:compass"
             ]
           }
-        ]
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:mars"
+          }
+        }
       }
     },
     "relic": {
@@ -55,7 +65,12 @@
               "min": 2
             }
           }
-        ]
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:mars"
+          }
+        }
       }
     }
   },
