@@ -20,6 +20,14 @@ class ProjectTests(unittest.TestCase):
         self.assertIn("yungs-better-dungeons", data["projects"])
         self.assertIn("l_enders-cataclysm", data["projects"])
 
+    def test_curseforge_export_manifest_builder(self):
+        builder = (ROOT / "build_curseforge.py").read_text(encoding="utf-8")
+        self.assertIn('"manifestType": "minecraftModpack"', builder)
+        self.assertIn('"manifestVersion": 1', builder)
+        for project_id in ("635042", "238086", "510089", "421850", "551586"):
+            self.assertIn(f'"projectID": {project_id}', builder)
+        self.assertIn('"overrides": "overrides"', builder)
+
     def test_story_has_five_chapters(self):
         data = json.loads((ROOT / "quests/story.json").read_text(encoding="utf-8"))
         self.assertEqual(len(data["chapters"]), 5)
