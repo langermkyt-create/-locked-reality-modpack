@@ -1,5 +1,5 @@
 {
-  "parent": "locked_reality:quests/harbinger",
+  "parent": "locked_reality:venus",
   "display": {
     "icon": {
       "item": "minecraft:glass"
