@@ -61,6 +61,22 @@ class ProjectTests(unittest.TestCase):
             if fragment_count is not None:
                 self.assertEqual(data["criteria"]["relic"]["conditions"]["items"][0]["count"]["min"], fragment_count)
 
+    def test_objectives_are_dimension_specific(self):
+        dimensions = {
+            "moon_relics": "ad_astra:moon",
+            "mars_core": "ad_astra:mars",
+            "venus_filter": "ad_astra:venus",
+            "mercury_seal": "ad_astra:mercury",
+            "glacio_key": "ad_astra:glacio",
+            "harbinger": "minecraft:overworld",
+            "ignis": "minecraft:the_nether",
+            "ender_guardian": "minecraft:the_end",
+        }
+        for quest_id, dimension in dimensions.items():
+            data = json.loads((DATA / "advancements/quests" / f"{quest_id}.json").read_text(encoding="utf-8"))
+            for criterion in data["criteria"].values():
+                self.assertEqual(criterion["conditions"]["player"]["location"]["dimension"], dimension)
+
     def test_smoke_test_checks_advancement_load_errors(self):
         smoke = (ROOT / "tests/smoke_server.py").read_text(encoding="utf-8")
         self.assertIn("Parsing error loading custom advancement locked_reality:", smoke)
