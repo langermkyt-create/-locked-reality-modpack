@@ -1,5 +1,5 @@
 {
-  "parent": "locked_reality:quests/venus_filter",
+  "parent": "locked_reality:mercury",
   "display": {
     "icon": {
       "item": "minecraft:gold_ingot"
