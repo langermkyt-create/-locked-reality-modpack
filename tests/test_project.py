@@ -38,7 +38,7 @@ class ProjectTests(unittest.TestCase):
             self.assertTrue(function.is_file())
 
     def test_quest_chain_json_and_reward_functions(self):
-        quest_ids = ("moon_relics", "mars_core", "venus_filter", "mercury_seal", "glacio_key", "final_wither")
+        quest_ids = ("moon_relics", "mars_core", "harbinger", "venus_filter", "mercury_seal", "ignis", "glacio_key", "ender_guardian", "final_wither")
         for quest_id in quest_ids:
             advancement = DATA / "advancements/quests" / f"{quest_id}.json"
             data = json.loads(advancement.read_text(encoding="utf-8"))
