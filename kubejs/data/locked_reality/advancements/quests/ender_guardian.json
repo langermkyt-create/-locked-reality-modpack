@@ -33,5 +33,10 @@
   "rewards": {
     "function": "locked_reality:quest_ender_guardian",
     "experience": 600
-  }
+  },
+  "requirements": [
+    [
+      "defeat_guardian"
+    ]
+  ]
 }
