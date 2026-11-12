@@ -1,0 +1,22 @@
+# Minecraft runtime data
+logs/
+crash-reports/
+saves/
+screenshots/
+server/
+run/
+
+# Java / Gradle
+.gradle/
+build/
+out/
+*.class
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
