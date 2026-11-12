@@ -82,6 +82,8 @@ def main():
             "Couldn't load advancement locked_reality:",
             "Couldn't parse data file locked_reality:",
             "Error loading advancement locked_reality:",
+            "Failed to parse data file locked_reality:dimension/mage_citadel.json",
+            "Failed to load dimension locked_reality:mage_citadel",
         )
         invalid_lines = [line for line in server_log.splitlines()
                          if any(marker in line for marker in invalid_markers)]
