@@ -37,5 +37,10 @@
   "rewards": {
     "function": "locked_reality:quest_globe_mars",
     "experience": 160
-  }
+  },
+  "requirements": [
+    [
+      "globe"
+    ]
+  ]
 }
