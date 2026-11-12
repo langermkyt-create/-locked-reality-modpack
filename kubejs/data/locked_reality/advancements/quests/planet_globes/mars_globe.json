@@ -1,0 +1,41 @@
+{
+  "parent": "locked_reality:mars",
+  "display": {
+    "icon": {
+      "item": "ad_astra:mars_globe"
+    },
+    "title": {
+      "text": "Марсианская крепость — глобус Марса"
+    },
+    "description": {
+      "text": "Найди планетарную крепость и забери её глобус."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "globe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ad_astra:mars_globe"
+            ]
+          }
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:mars"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "locked_reality:quest_globe_mars",
+    "experience": 160
+  }
+}
