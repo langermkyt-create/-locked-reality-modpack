@@ -1,0 +1,41 @@
+{
+  "parent": "locked_reality:moon",
+  "display": {
+    "icon": {
+      "item": "ad_astra:moon_globe"
+    },
+    "title": {
+      "text": "Лунная крепость — глобус Луны"
+    },
+    "description": {
+      "text": "Найди планетарную крепость и забери её глобус."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "globe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ad_astra:moon_globe"
+            ]
+          }
+        ],
+        "player": {
+          "location": {
+            "dimension": "ad_astra:moon"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "locked_reality:quest_globe_moon",
+    "experience": 120
+  }
+}
