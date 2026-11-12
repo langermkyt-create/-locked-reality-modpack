@@ -48,6 +48,19 @@ class ProjectTests(unittest.TestCase):
             reward_function = data["rewards"]["function"].split(":", 1)[1]
             self.assertTrue((DATA / "functions" / f"{reward_function}.mcfunction").is_file())
 
+    def test_bosses_gate_later_planetary_chapters(self):
+        expected = {
+            "venus_filter": ("locked_reality:quests/harbinger", 5),
+            "mercury_seal": ("locked_reality:quests/venus_filter", 7),
+            "glacio_key": ("locked_reality:quests/ignis", 11),
+            "final_wither": ("locked_reality:quests/ender_guardian", None),
+        }
+        for quest_id, (parent, fragment_count) in expected.items():
+            data = json.loads((DATA / "advancements/quests" / f"{quest_id}.json").read_text(encoding="utf-8"))
+            self.assertEqual(data["parent"], parent)
+            if fragment_count is not None:
+                self.assertEqual(data["criteria"]["relic"]["conditions"]["items"][0]["count"]["min"], fragment_count)
+
     def test_smoke_test_checks_advancement_load_errors(self):
         smoke = (ROOT / "tests/smoke_server.py").read_text(encoding="utf-8")
         self.assertIn("Parsing error loading custom advancement locked_reality:", smoke)
